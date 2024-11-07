@@ -3,8 +3,8 @@ name: Manual install
 on:
   workflow_dispatch:
     inputs:
-      Run tests ?:
-        description: 'Is tests required on build'
+      run_tests:
+        description: 'Run tests ?'
         default: false
         type: boolean
 
