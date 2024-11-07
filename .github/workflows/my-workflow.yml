@@ -7,6 +7,11 @@ on:
         description: 'Run tests ?'
         default: false
         type: boolean
+  pull_request:
+    types: [opened, synchronize, reopened]
+  
+env:
+  RUN_TESTS : ${{github.event.inputs.run_tests != 'false'}}
 
 jobs:
   install:
@@ -29,5 +34,5 @@ jobs:
 
       
     - name: Test Application
-      if : ${{ github.event.inputs.run_tests == 'true' }}
+      if : ${{ env.RUN_TESTS == 'true' }}
       run: npm test
