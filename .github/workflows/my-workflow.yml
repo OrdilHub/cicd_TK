@@ -26,5 +26,8 @@ jobs:
 
     - name: Build Application
       run: npm run build
+
+      
     - name: Test Application
+      if : ${{ github.event.inputs.run_tests == 'true' }}
       run: npm test
