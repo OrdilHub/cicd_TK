@@ -17,6 +17,8 @@ app.get("/minus/:a/:b", (request: Request, response: Response) => {
   response.json(result);
 });
 
+
+
 app.get("/multiply/:a/:b", (request: Request, response: Response) => {
   const a = parseInt(request.params.a);
   const b = parseInt(request.params.b);
