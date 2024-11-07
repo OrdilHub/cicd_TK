@@ -26,7 +26,9 @@ jobs:
         image: postgres
         # Provide the password for postgres
         env:
-          POSTGRES_PASSWORD: postgres1
+          POSTGRES_PASSWORD: "cicd_password"
+          POSTGRES_DB : "cicd_database"
+          POSTGRES_USER: "cicd_user"
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
