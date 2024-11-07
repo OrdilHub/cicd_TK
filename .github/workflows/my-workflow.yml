@@ -2,6 +2,11 @@ name: Manual install
 
 on:
   workflow_dispatch:
+    inputs:
+      Run tests ?:
+        description: 'Is tests required on build'
+        default: false
+        type: boolean
 
 jobs:
   install:
