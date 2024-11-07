@@ -6,8 +6,8 @@ describe("Database", () => {
       host: "127.0.0.1",
       port: 5432,
       database: "cicd_database",
-      user: "cicd_user",
-      password: "cicd_password",
+      user: ${{secrets.DATABASE_POSTGRES_USER}},
+      password: ${{secrets.DATABASE_POSTGRES_PWD}},
     });
 
     const connected = await database
