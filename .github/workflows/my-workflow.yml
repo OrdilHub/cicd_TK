@@ -26,9 +26,9 @@ jobs:
         image: postgres
         # Provide the password for postgres
         env:
-          POSTGRES_PASSWORD: "cicd_password"
+          POSTGRES_PASSWORD: ${{secrets.DATABASE_POSTGRES_PWD}}
           POSTGRES_DB : "cicd_database"
-          POSTGRES_USER: "cicd_user"
+          POSTGRES_USER: ${{secrets.DATABASE_POSTGRES_USER}}
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
